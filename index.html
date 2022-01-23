@@ -1,58 +1,63 @@
 <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS CAT AND DOG FETCH</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
 
-  <head>
-    <link rel="stylesheet" href="style.css">
-    <title>JS CAT AND DOG FETCH</title>
-  </head>
-
-  <body>
-
-    <div class="results">
-      <div id="cat_result" class="result">
-        <p>Random Cat Placeholder</p>
-      </div>
-      <div id="dog_result" class="result">
-        <p>Random dog Placeholder</p>
-      </div>
+  <div class="results">
+    <div id="cat_result" class="result">
+      <p>Random Cat Placeholder</p>
     </div>
-
-    <div class="buttons">
-      <button id="cat_btn">Fetch Cat</button>
-      <button id="dog_btn">Fetch Dog</button>
+    <div id="dog_result" class="result">
+      <p>Random dog Placeholder</p>
     </div>
+  </div>
 
-  </body>
+  <div class="buttons">
+    <button id="cat_btn">Fetch Cat</button>
+    <button id="dog_btn">Fetch Dog</button>
+  </div>
 
-  <script>
-    const cat_result = document.getElementById('cat_result');
-    const dog_result = document.getElementById('dog_result');
-
-    const cat_btn = document.getElementById('cat_btn');
-    const dog_btn = document.getElementById('dog_btn');
-
-    cat_btn.addEventListener('click', getRandomCat)
-    dog_btn.addEventListener('click', getRandomDog)
-
-    function getRandomCat() {
-      fetch('https://aws.random.cat/meow')
-        .then(res => res.json())
-        .then(data => {
-          cat_result.innerHTML = `<img src="${data.file}"/>`
-        })
-    }
-    function getRandomDog() {
-      fetch('https://random.dog/woof.json')
-        .then(res => res.json())
-        .then(data => {
-
-          dog_result.innerHTML = `<img src="${data.url}"/>`
-
-
-        })
-
-    }
-
-  </script>
 </body>
+
+<script>
+  const cat_result = document.getElementById('cat_result');
+  const dog_result = document.getElementById('dog_result');
+
+  const cat_btn = document.getElementById('cat_btn');
+  const dog_btn = document.getElementById('dog_btn');
+
+  cat_btn.addEventListener('click', getRandomCat)
+  dog_btn.addEventListener('click', getRandomDog)
+
+  function getRandomCat() {
+    fetch('https://aws.random.cat/meow')
+      .then(res => res.json())
+      .then(data => {
+        cat_result.innerHTML = `<img src="${data.file}"/>`
+      })
+  }
+  function getRandomDog() {
+    fetch('https://random.dog/woof.json')
+      .then(res => res.json())
+      .then(data => {
+
+        dog_result.innerHTML = `<img src="${data.url}"/>`
+
+
+      })
+
+  }
+
+</script>
+
+</body>
+
+</html>
