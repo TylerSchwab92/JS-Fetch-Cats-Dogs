@@ -1,0 +1,15 @@
+<div class="results">
+  <div id="cat_result" class="result">
+    <p>Random Cat Placeholder</p>
+  </div>
+  <div id="dog_result" class="result">
+    <p>Random dog Placeholder</p>
+  </div>
+</div>
+
+<div class="buttons">
+  <button id="cat_btn">Fetch Cat</button>
+  <button id="dog_btn">Fetch Dog</button>
+</div>
+
+
